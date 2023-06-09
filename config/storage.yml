@@ -30,5 +30,5 @@ local:
 
 # mirror:
 #   service: Mirror
-#   primary: local
+#   blue: local
 #   mirrors: [ amazon, google, microsoft ]
