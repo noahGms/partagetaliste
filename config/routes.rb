@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   resources :lists do
-    resources :categories, only: %i[new create edit update destroy]
+    resources :categories, only: [:new, :create, :edit, :update, :destroy]
   end
 
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   root "home#index"
 end
