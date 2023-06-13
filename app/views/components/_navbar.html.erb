@@ -1,12 +1,14 @@
-
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <span class="self-center text-2xl text-black font-semibold whitespace-nowrap dark:text-white">Partage T'as Liste</span>
+    <span class="self-center text-2xl text-black font-semibold whitespace-nowrap dark:text-white">
+      PartageTaListe
+    </span>
     <div class="flex md:order-2">
       <% if current_user %>
-        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600" %>
+        <%= link_to "Lists", lists_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mr-3" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "rounded-lg py-3 px-5 bg-red-600 text-white block font-medium" %>
       <% else %>
-        <%= link_to "Se connecter", new_user_session_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+        <%= link_to "Sign in", new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
       <% end %>
     </div>
   </div>
