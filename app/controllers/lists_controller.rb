@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
     @lists = List.all.where(user: current_user)
@@ -49,5 +50,9 @@ class ListsController < ApplicationController
 
     def list_params
       params.require(:list).permit(:title)
+    end
+
+    def authorize_user
+      redirect_to list_url(@list), alert: "You can't do that." unless @list.user == current_user
     end
 end
