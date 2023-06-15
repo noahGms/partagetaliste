@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :categories, only: [:new, :create, :edit, :update, :destroy]
+    resources :items
   end
 
   root "home#index"
