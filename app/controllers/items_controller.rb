@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
     @item.list_id = @list.id
 
     if @item.save
-      redirect_to list_url(@list), notice: "Item was successfully created."
+      redirect_to list_url(@list), notice: "L'item a été créé avec succès."
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to list_url(@list), notice: "Item was successfully updated."
+      redirect_to list_url(@list), notice: "L'item a été mis à jour avec succès."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
 
-    redirect_to list_url(@list), notice: "Item was successfully destroyed."
+    redirect_to list_url(@list), notice: "L'item a été supprimé avec succès."
   end
 
   private
@@ -50,6 +50,6 @@ class ItemsController < ApplicationController
     end
 
   def authorize_user
-    redirect_to list_url(@list), alert: "You can't do that." unless @list.user == current_user
+    redirect_to list_url(@list), alert: "Oups! Tu n'as pas le droit" unless @list.user == current_user
   end
 end

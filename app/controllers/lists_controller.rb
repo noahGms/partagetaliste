@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     @list.user = current_user
 
     if @list.save
-      redirect_to list_url(@list), notice: "List was successfully created."
+      redirect_to list_url(@list), notice: "La liste a été créée avec succès."
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class ListsController < ApplicationController
 
   def update
     if @list.update(list_params)
-      redirect_to list_url(@list), notice: "List was successfully updated."
+      redirect_to list_url(@list), notice: "La liste a été mise à jour avec succès."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
 
-    redirect_to lists_url, notice: "List was successfully destroyed."
+    redirect_to lists_url, notice: "La liste a été supprimée avec succès."
   end
 
   private
@@ -53,6 +53,6 @@ class ListsController < ApplicationController
     end
 
     def authorize_user
-      redirect_to list_url(@list), alert: "You can't do that." unless @list.user == current_user
+      redirect_to list_url(@list), alert: "Oups! Tu n'as pas le droit" unless @list.user == current_user
     end
 end

@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category.list_id = @list.id
 
     if @category.save
-      redirect_to list_url(@list), notice: "Category was successfully created."
+      redirect_to list_url(@list), notice: "La catégorie a été créée avec succès."
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to list_url(@list), notice: "Category was successfully updated."
+      redirect_to list_url(@list), notice: "La catégorie a été mise à jour avec succès."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
 
-    redirect_to list_url(@list), notice: "Category was successfully destroyed."
+    redirect_to list_url(@list), notice: "La catégorie a été supprimée avec succès."
   end
 
   private
@@ -50,6 +50,6 @@ class CategoriesController < ApplicationController
     end
 
     def authorize_user
-      redirect_to list_url(@list), alert: "You can't do that." unless @list.user == current_user
+      redirect_to list_url(@list), alert: "Oups! Tu n'as pas le droit" unless @list.user == current_user
     end
 end
