@@ -28,7 +28,7 @@
 
   <div class="my-5">
     <%= form.label :category_id %>
-    <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name, item.category_id), { include_blank: true }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.where(list_id: @list.id), :id, :name, item.category_id), { include_blank: true }, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5 hidden">
