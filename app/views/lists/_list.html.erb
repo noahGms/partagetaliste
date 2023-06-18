@@ -1,7 +1,7 @@
 <div id="<%= dom_id list %>">
   <% if action_name != 'show' %>
     <p class="my-5">
-      <strong class="block font-medium mb-1">Title:</strong>
+      <strong class="block font-medium mb-1">Titre:</strong>
       <%= list.title %>
     </p>
   <% end %>
@@ -22,13 +22,13 @@
     </ol>
 
     <% if @list.categories.count.positive? %>
-      <%= link_to "Add new item", new_list_item_path(list), class: "rounded-lg py-3 px-5 text-white bg-blue-600 inline-block font-medium" %>
+      <%= link_to "Ajouter un truc", new_list_item_path(list), class: "rounded-lg py-3 px-5 text-white bg-blue-600 inline-block font-medium" %>
     <% end %>
   <% end %>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this list", list, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this list', edit_list_path(list), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Voir la liste", list, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Modifier la liste', edit_list_path(list), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>

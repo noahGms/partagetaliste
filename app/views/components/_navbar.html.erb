@@ -6,9 +6,9 @@
     <div class="flex md:order-2">
       <% if current_user %>
         <%= link_to "Lists", lists_path, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mr-3" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "rounded-lg py-3 px-5 bg-red-600 text-white block font-medium" %>
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "rounded-lg py-3 px-5 bg-red-600 text-white block font-medium" %>
       <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+        <%= link_to "Connexion", new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
       <% end %>
     </div>
   </div>

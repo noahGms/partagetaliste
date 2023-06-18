@@ -1,13 +1,13 @@
 <div class="bg-white shadow-md rounded-lg p-4 flex items-center mb-4">
   <div class="flex-grow">
     <h2 class="text-xl font-bold mb-2"><%= item.name %></h2>
-    <p class="text-sm text-gray-500"><%= item.username %></p>
+    <p class="text-sm text-gray-500"><%= item.user_name %></p>
   </div>
   <div class="bg-blue-500 text-white rounded-lg ml-4 p-2">
     <span class="text-sm font-bold">x<%= item.quantity %></span>
   </div>
   <% if user_signed_in? && current_user == @list.user %>
-    <%= link_to 'Edit this item', edit_list_item_path(@list, item), class: "rounded-lg ml-4 p-2 bg-gray-100 inline-block font-medium" %>
-    <%= button_to 'Destroy this item', list_item_path(@list, item), method: :delete, class: "bg-red-500 text-white rounded-lg ml-4 p-2 text-sm font-bold" %>
+    <%= link_to 'Modifier', edit_list_item_path(@list, item), class: "rounded-lg ml-4 p-2 bg-gray-100 inline-block font-medium" %>
+    <%= button_to 'Supprimer', list_item_path(@list, item), method: :delete, class: "bg-red-500 text-white rounded-lg ml-4 p-2 text-sm font-bold" %>
   <% end %>
 </div>
