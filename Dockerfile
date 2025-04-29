@@ -34,7 +34,7 @@ RUN rails db:create db:migrate
 COPY . .
 
 # Exposition du port
-EXPOSE 3000
+EXPOSE 1112
 
 # Commande par défaut pour démarrer l'application
 CMD ["rails", "server", "-b", "0.0.0.0"]
