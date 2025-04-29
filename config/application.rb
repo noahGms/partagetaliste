@@ -16,7 +16,7 @@ module Partagetaliste
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.time_zone = "Central Time (US & Canada)on
+    config.hosts << 'bbq.stally.fr'
   end
 end
