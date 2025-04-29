@@ -20,6 +20,16 @@ COPY Gemfile Gemfile.lock ./
 # Installation des gems
 RUN bundle install
 
+# Installation des gems nécessaires pour le frontend
+RUN npm install -g yarn
+RUN yarn install
+
+# Compilation de Tailwind CSS
+RUN rails tailwindcss:build
+
+# Création de la base de données et exécution des migrations
+RUN rails db:create db:migrate
+
 # Copie du reste de l'application
 COPY . .
 
